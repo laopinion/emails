@@ -878,6 +878,15 @@ tr { font-size:1px; mso-line-height-alt:0; mso-margin-top-alt:1px; }
       </td>
     </tr>
   </table>
+
+  <sectionform>
+    <iframe id="code" src="./mas-leidas.html" frameborder="0" style="display: none;"></iframe>
+    <form id="form__html" style="  display: flex; justify-content: center;">
+      <h3 class="message">Generando código...</h3>
+      <textarea id="texto__html" cols="100" rows="50" style="display: none;"></textarea>
+    </form>
+  </sectionform>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script>
     /*const meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
@@ -889,205 +898,227 @@ tr { font-size:1px; mso-line-height-alt:0; mso-margin-top-alt:1px; }
     const urlService2 = 'https://laopinion.com.co/api/views/mailchimp?display_id=services_2';
     const urlService3 = 'https://laopinion.com.co/api/views/mailchimp?display_id=services_5';
     const urlService4 = 'https://laopinion.com.co/api/views/mailchimp?display_id=services_3';
-
-    function colorSection(name) {
-      if (name == 'Viral' || name == 'Entretenimiento' || name == 'Actividad social' || name == 'Tecnología' || name == 'Cultura' || name == 'Vida y salud' || name == 'Zona verde') {
-        return '#8B7AB5';
-      } else if (name == 'Judicial') {
-        return '#F87917';
-      } else if (name == 'Actualidad' || name == 'Economía' || name == 'Política' || name == 'Colombia' || name == 'Venezuela' || name == 'Mundo' || name == 'Historias') {
-        return '#3D9E04';
-      } else if (name == 'Cúcuta') {
-        return '#BA2025';
-      } else if (name == 'Región' || name == 'Ocaña' || name == 'pamplona') {
-        return '#F9D821';
-      } else if (name == 'Deportes' || name == 'Fútbol' || name == '+ Deportes') {
-        return '#3FA6F2';
-      } else if (name == 'Frontera') {
-        return '#89C33F';
-      } else if (name == 'Participacion') {
-        return '#C60B77';
+    $(function(){ 
+      function colorSection(name) {
+        if (name == 'Viral' || name == 'Entretenimiento' || name == 'Actividad social' || name == 'Tecnología' || name == 'Cultura' || name == 'Vida y salud' || name == 'Zona verde') {
+          return '#8B7AB5';
+        } else if (name == 'Judicial') {
+          return '#F87917';
+        } else if (name == 'Actualidad' || name == 'Economía' || name == 'Política' || name == 'Colombia' || name == 'Venezuela' || name == 'Mundo' || name == 'Historias') {
+          return '#3D9E04';
+        } else if (name == 'Cúcuta') {
+          return '#BA2025';
+        } else if (name == 'Región' || name == 'Ocaña' || name == 'pamplona') {
+          return '#F9D821';
+        } else if (name == 'Deportes' || name == 'Fútbol' || name == '+ Deportes') {
+          return '#3FA6F2';
+        } else if (name == 'Frontera') {
+          return '#89C33F';
+        } else if (name == 'Participacion') {
+          return '#C60B77';
+        }
       }
-    }
 
-    // Principal
-    $.ajax({ 
-      type: 'GET', 
-      url: urlService1, 
-      dataType: 'jsonp',
-      success: function (data) { 
-        // console.log(data)
-        $.each(data, function(index, element){
-          // let title = `#${index} .titulon`;
-          let title = '#notaPrincipal .title';
-          let titleHref = '#notaPrincipal .title a';
-          let body = '#notaPrincipal .texto';
-          let bodyP = '#notaPrincipal .texto p';
-          let verNoticia = '#notaPrincipal .verNoticia a';
-          let img = '#notaPrincipal .imagen';
-          let section = '#notaPrincipal .seccion';
-          let sectionColor = '#notaPrincipal .color';
+      // Principal
+      $.ajax({ 
+        type: 'GET', 
+        url: urlService1, 
+        dataType: 'jsonp',
+        success: function (data) { 
+          // console.log(data)
+          $.each(data, function(index, element){
+            // let title = `#${index} .titulon`;
+            let title = '#notaPrincipal .title';
+            let titleHref = '#notaPrincipal .title a';
+            let body = '#notaPrincipal .texto';
+            let bodyP = '#notaPrincipal .texto p';
+            let verNoticia = '#notaPrincipal .verNoticia a';
+            let img = '#notaPrincipal .imagen';
+            let section = '#notaPrincipal .seccion';
+            let sectionColor = '#notaPrincipal .color';
 
-          $(title).html(element.node_title);
-          $(titleHref).css({ 'text-decoration': 'none', 'color': '#333333'});
-          $(titleHref).attr('href', `https://www.laopinion.com.co${element.path}`);
+            $(title).html(element.node_title);
+            $(titleHref).css({ 'text-decoration': 'none', 'color': '#333333'});
+            $(titleHref).attr('href', `https://www.laopinion.com.co${element.path}`);
 
-          $(body).html(element.body);
-          $(bodyP).css('margin', '0');
-          $(verNoticia).attr('href', `https://www.laopinion.com.co${element.path}`);
+            $(body).html(element.body);
+            $(bodyP).css('margin', '0');
+            $(verNoticia).attr('href', `https://www.laopinion.com.co${element.path}`);
 
-          $(section).html(element.section);
-          $(sectionColor).css('background', colorSection(element.section));
+            $(section).html(element.section);
+            $(sectionColor).css('background', colorSection(element.section));
 
-          if (element.tipo == 'Video') {
-            $(img).html(element.imagenvideo);
-          } else if (element.tipo == 'Artículo') {
-            $(img).html(element.imagen);
-          } else {
-            $(img).html(element.imagengaleria);
-          }
-        });
-      }
-    });
+            if (element.tipo == 'Video') {
+              $(img).html(element.imagenvideo);
+            } else if (element.tipo == 'Artículo') {
+              $(img).html(element.imagen);
+            } else {
+              $(img).html(element.imagengaleria);
+            }
+          });
+        }
+      });
 
-    // Primer bloque
-    $.ajax({ 
-      type: 'GET', 
-      url: urlService2, 
-      dataType: 'jsonp',
-      success: function (data) { 
-        // console.log(data)
-        $.each(data, function(index, element){
-          // let title = `#${index} .titulon`;
-          let title = `#notasPrimerBloque .title-${index}`;
-          let titleHref = `#notasPrimerBloque .title-${index} a`;
-          let body = `#notasPrimerBloque .texto-${index}`;
-          let bodyP = `#notasPrimerBloque .texto-${index} p`;
-          let verNoticia = `#notasPrimerBloque .verNoticia-${index} a`;
-          let img = `#notasPrimerBloque .imagen-${index}`;
-          let section = `#notasPrimerBloque .seccion-${index}`;
-          let sectionColor = `#notasPrimerBloque .color-${index}`;
+      // Primer bloque
+      $.ajax({ 
+        type: 'GET', 
+        url: urlService2, 
+        dataType: 'jsonp',
+        success: function (data) { 
+          // console.log(data)
+          $.each(data, function(index, element){
+            // let title = `#${index} .titulon`;
+            let title = `#notasPrimerBloque .title-${index}`;
+            let titleHref = `#notasPrimerBloque .title-${index} a`;
+            let body = `#notasPrimerBloque .texto-${index}`;
+            let bodyP = `#notasPrimerBloque .texto-${index} p`;
+            let verNoticia = `#notasPrimerBloque .verNoticia-${index} a`;
+            let img = `#notasPrimerBloque .imagen-${index}`;
+            let section = `#notasPrimerBloque .seccion-${index}`;
+            let sectionColor = `#notasPrimerBloque .color-${index}`;
 
-          $(title).html(element.node_title);
-          $(titleHref).css({ 'text-decoration': 'none', 'color': '#333333'});
-          $(titleHref).attr('href', `https://www.laopinion.com.co${element.path}`);
+            $(title).html(element.node_title);
+            $(titleHref).css({ 'text-decoration': 'none', 'color': '#333333'});
+            $(titleHref).attr('href', `https://www.laopinion.com.co${element.path}`);
 
-          $(body).html(element.body);
-          $(bodyP).css('margin', '0');
-          $(verNoticia).attr('href', `https://www.laopinion.com.co${element.path}`);
+            $(body).html(element.body);
+            $(bodyP).css('margin', '0');
+            $(verNoticia).attr('href', `https://www.laopinion.com.co${element.path}`);
 
-          $(section).html(element.section);
-          $(sectionColor).css('background', colorSection(element.section));
+            $(section).html(element.section);
+            $(sectionColor).css('background', colorSection(element.section));
 
-          // $(img).html(element.imagen);
-          if (element.tipo == 'Video') {
-            $(img).html(element.imagenvideo);
-          } else if (element.tipo == 'Artículo') {
-            $(img).html(element.imagen);
-          } else {
-            $(img).html(element.imagengaleria);
-          }
-        });
-      }
-    });
+            // $(img).html(element.imagen);
+            if (element.tipo == 'Video') {
+              $(img).html(element.imagenvideo);
+            } else if (element.tipo == 'Artículo') {
+              $(img).html(element.imagen);
+            } else {
+              $(img).html(element.imagengaleria);
+            }
+          });
+        }
+      });
 
-    // Segundo bloque
-    $.ajax({ 
-      type: 'GET', 
-      url: urlService3, 
-      dataType: 'jsonp',
-      success: function (data) { 
-        // console.log(data)
-        $.each(data, function(index, element){
-          // let title = `#${index} .titulon`;
-          let title = `#notasSegundoBloque .title-${index}`;
-          let titleHref = `#notasSegundoBloque .title-${index} a`;
-          let body = `#notasSegundoBloque .texto-${index}`;
-          let bodyP = `#notasSegundoBloque .texto-${index} p`;
-          let verNoticia = `#notasSegundoBloque .verNoticia-${index} a`;
-          let img = `#notasSegundoBloque .imagen-${index}`;
-          let section = `#notasSegundoBloque .seccion-${index}`;
-          let sectionColor = `#notasSegundoBloque .color-${index}`;
+      // Segundo bloque
+      $.ajax({ 
+        type: 'GET', 
+        url: urlService3, 
+        dataType: 'jsonp',
+        success: function (data) { 
+          // console.log(data)
+          $.each(data, function(index, element){
+            // let title = `#${index} .titulon`;
+            let title = `#notasSegundoBloque .title-${index}`;
+            let titleHref = `#notasSegundoBloque .title-${index} a`;
+            let body = `#notasSegundoBloque .texto-${index}`;
+            let bodyP = `#notasSegundoBloque .texto-${index} p`;
+            let verNoticia = `#notasSegundoBloque .verNoticia-${index} a`;
+            let img = `#notasSegundoBloque .imagen-${index}`;
+            let section = `#notasSegundoBloque .seccion-${index}`;
+            let sectionColor = `#notasSegundoBloque .color-${index}`;
 
-          $(title).html(element.node_title);
-          $(titleHref).css({ 'text-decoration': 'none', 'color': '#333333'});
-          $(titleHref).attr('href', `https://www.laopinion.com.co${element.path}`);
+            $(title).html(element.node_title);
+            $(titleHref).css({ 'text-decoration': 'none', 'color': '#333333'});
+            $(titleHref).attr('href', `https://www.laopinion.com.co${element.path}`);
 
-          $(body).html(element.body);
-          $(bodyP).css('margin', '0');
-          $(verNoticia).attr('href', `https://www.laopinion.com.co${element.path}`);
+            $(body).html(element.body);
+            $(bodyP).css('margin', '0');
+            $(verNoticia).attr('href', `https://www.laopinion.com.co${element.path}`);
 
-          $(section).html(element.section);
-          $(sectionColor).css('background', colorSection(element.section));
+            $(section).html(element.section);
+            $(sectionColor).css('background', colorSection(element.section));
 
-          // $(img).html(element.imagen);
-          if (element.tipo == 'Video') {
-            $(img).html(element.imagenvideo);
-          } else if (element.tipo == 'Artículo') {
-            $(img).html(element.imagen);
-          } else {
-            $(img).html(element.imagengaleria);
-          }
-        });
-      }
-    });
+            // $(img).html(element.imagen);
+            if (element.tipo == 'Video') {
+              $(img).html(element.imagenvideo);
+            } else if (element.tipo == 'Artículo') {
+              $(img).html(element.imagen);
+            } else {
+              $(img).html(element.imagengaleria);
+            }
+          });
+        }
+      });
 
-    // Notas virales
-    $.ajax({ 
-      type: 'GET', 
-      url: urlService4, 
-      dataType: 'jsonp',
-      success: function (data) { 
-        // console.log(data)
-        $.each(data, function(index, element){
-          // let title = `#${index} .titulon`;
-          /*
-          Video
-          https://gallery.mailchimp.com/6e19755e139e76341a0bb29f2/images/bc1f1180-b81e-4dfa-b242-194f009a197f.png
-          
-          Galeria
-          https://gallery.mailchimp.com/6e19755e139e76341a0bb29f2/images/bd5a532d-ca7d-4b26-8881-05bd350cb175.png
-          */
-          let title = `#notasViral .title-${index}`;
-          let titleHref = `#notasViral .title-${index} a`;
-          let body = `#notasViral .texto-${index}`;
-          let bodyP = `#notasViral .texto-${index} p`;
-          let verNoticia = `#notasViral .verNoticia-${index} a`;
-          let img = `#notasViral .imagen-${index}`;
-          let fondo = `#notasViral .fondo-${index} img`;
-          let section = `#notasViral .seccion-${index}`;
-          let sectionColor = `#notasViral .color-${index}`;          
-          let logo = `#notasViral .logo-${index} img`;
+      // Notas virales
+      $.ajax({ 
+        type: 'GET', 
+        url: urlService4, 
+        dataType: 'jsonp',
+        success: function (data) { 
+          // console.log(data)
+          $.each(data, function(index, element){
+            // let title = `#${index} .titulon`;
+            /*
+            Video
+            https://gallery.mailchimp.com/6e19755e139e76341a0bb29f2/images/bc1f1180-b81e-4dfa-b242-194f009a197f.png
+            
+            Galeria
+            https://gallery.mailchimp.com/6e19755e139e76341a0bb29f2/images/bd5a532d-ca7d-4b26-8881-05bd350cb175.png
+            */
+            let title = `#notasViral .title-${index}`;
+            let titleHref = `#notasViral .title-${index} a`;
+            let body = `#notasViral .texto-${index}`;
+            let bodyP = `#notasViral .texto-${index} p`;
+            let verNoticia = `#notasViral .verNoticia-${index} a`;
+            let img = `#notasViral .imagen-${index}`;
+            let fondo = `#notasViral .fondo-${index} img`;
+            let section = `#notasViral .seccion-${index}`;
+            let sectionColor = `#notasViral .color-${index}`;          
+            let logo = `#notasViral .logo-${index} img`;
 
-          $(title).html(element.node_title);
-          $(titleHref).css({ 'text-decoration': 'none', 'color': '#ffffff'});
-          $(titleHref).attr('href', `https://www.laopinion.com.co${element.path}`);
+            $(title).html(element.node_title);
+            $(titleHref).css({ 'text-decoration': 'none', 'color': '#ffffff'});
+            $(titleHref).attr('href', `https://www.laopinion.com.co${element.path}`);
 
-          $(body).html(element.body);
-          $(bodyP).css('margin', '0');
-          $(verNoticia).attr('href', `https://www.laopinion.com.co${element.path}`);
+            $(body).html(element.body);
+            $(bodyP).css('margin', '0');
+            $(verNoticia).attr('href', `https://www.laopinion.com.co${element.path}`);
 
-          $(section).html(element.section);
-          $(sectionColor).css('background', colorSection(element.section));
+            $(section).html(element.section);
+            $(sectionColor).css('background', colorSection(element.section));
 
-          if (element.tipo == 'Video') {
-            $(img).html(element.imagenvideo);
-            let rutaImg = $(`${img} img`).attr('src');
-            $(fondo).attr('src', rutaImg);
-            // $(logo).attr('src', 'https://gallery.mailchimp.com/6e19755e139e76341a0bb29f2/images/bc1f1180-b81e-4dfa-b242-194f009a197f.png')
-          } else if (element.tipo == 'Artículo') {
-            $(img).html(element.imagen);
-            let rutaImg = $(`${img} img`).attr('src');
-            $(fondo).attr('src', rutaImg);
-          } else {
-            $(img).html(element.imagengaleria);
-            let rutaImg = $(`${img} img`).attr('src');
-            $(fondo).attr('src', rutaImg);
-            // $(logo).attr('src', 'https://gallery.mailchimp.com/6e19755e139e76341a0bb29f2/images/bd5a532d-ca7d-4b26-8881-05bd350cb175.png')
-          }
-        });
-      }
-    });
+            if (element.tipo == 'Video') {
+              $(img).html(element.imagenvideo);
+              let rutaImg = $(`${img} img`).attr('src');
+              $(fondo).attr('src', rutaImg);
+              // $(logo).attr('src', 'https://gallery.mailchimp.com/6e19755e139e76341a0bb29f2/images/bc1f1180-b81e-4dfa-b242-194f009a197f.png')
+            } else if (element.tipo == 'Artículo') {
+              $(img).html(element.imagen);
+              let rutaImg = $(`${img} img`).attr('src');
+              $(fondo).attr('src', rutaImg);
+            } else {
+              $(img).html(element.imagengaleria);
+              let rutaImg = $(`${img} img`).attr('src');
+              $(fondo).attr('src', rutaImg);
+              // $(logo).attr('src', 'https://gallery.mailchimp.com/6e19755e139e76341a0bb29f2/images/bd5a532d-ca7d-4b26-8881-05bd350cb175.png')
+            }
+          });
+        }
+      });
+
+      setTimeout(() => {
+        $('#texto__html').show();
+        $('#form__html .message').hide();
+
+        const html = $('#code').contents().find("html").html();
+
+        $('#form__html #texto__html').text(
+          `<!doctype html>
+            <html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">   
+              ${html}
+            </html>
+          `);
+        const text = $('#form__html #texto__html').text()
+        const SCRIPT_REGEX = /<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi;
+        const SECTION_REGEX = /<sectionform\b[^<]*(?:(?!<\/sectionform>)<[^<]*)*<\/sectionform>/gi;
+        let stripText = text.replace(SCRIPT_REGEX, "");
+        stripText = stripText.replace(SECTION_REGEX, "");
+        $('#form__html #texto__html').text(stripText)
+      }, 5000);
+    })
+
 
   </script>
 
