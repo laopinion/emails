@@ -1,0 +1,907 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html;" charset="utf-8" />
+    <!-- view port meta tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="x-ua-compatible" content="IE=edge" />
+    <title>*|MC:SUBJECT|*</title>
+
+    <style type="text/css">
+      * {
+        -webkit-text-size-adjust: none;
+        -ms-text-size-adjust: none;
+        max-height: 1000000px;
+      }
+      table {
+        border-collapse: collapse !important;
+      }
+      #outlook a {
+        padding: 0;
+      }
+      .ReadMsgBody {
+        width: 100%;
+      }
+      .ExternalClass {
+        width: 100%;
+      }
+      .ExternalClass * {
+        line-height: 100%;
+      }
+      .ios_geo a {
+        color: #1c1c1c !important;
+        text-decoration: none !important;
+      }
+      .hideDesktop {
+        display: none;
+      }
+      .textcenter {
+        text-align: center;
+      }
+      @media only screen and (max-width: 600px) {
+        .hide {
+          display: none;
+        }
+      }
+      @media only screen and (max-width: 600px) {
+        .blockwrap {
+          display: block !important;
+        }
+      }
+      @media only screen and (max-width: 600px) {
+        .showme {
+          display: block !important;
+          width: auto !important;
+          overflow: visible !important;
+          float: none !important;
+          max-height: inherit !important;
+          max-width: inherit !important;
+          line-height: auto !important;
+          margin-top: 0 !important;
+          visibility: inherit !important;
+        }
+      }
+      @media only screen and (max-width: 600px) {
+        [class].movedown {
+          display: table-footer-group !important;
+        }
+      }
+      @media only screen and (max-width: 600px) {
+        [class].moveup {
+          display: table-header-group !important;
+        }
+      }
+      @media only screen and (max-width: 600px) {
+        [class].textright {
+          text-align: right !important;
+        }
+      }
+      @media only screen and (max-width: 600px) {
+        [class].textleft {
+          text-align: left !important;
+        }
+      }
+      @media only screen and (max-width: 600px) {
+        [class].textcenter {
+          text-align: center !important;
+        }
+      }
+      @media only screen and (max-width: 600px) {
+        [class].font27 {
+          font-size: 27px !important;
+          font-weight: normal !important;
+          line-height: 27px !important;
+        }
+      }
+      @media only screen and (max-width: 600px) {
+        [class].hX {
+          height: Xpx !important;
+        }
+      }
+      @media only screen and (max-width: 600px) {
+        [class].w380 {
+          width: 380px !important;
+        }
+      }
+      @media only screen and (max-width: 600px) {
+        [class].w360 {
+          width: 360px !important;
+        }
+      }
+      @media only screen and (max-width: 600px) {
+        [class].w175 {
+          width: 175px !important;
+        }
+      }
+      @media only screen and (max-width: 600px) {
+        [class].w350 {
+          width: 350px !important;
+        }
+      }
+      @media only screen and (max-width: 600px) {
+        [class].w320 {
+          width: 268px !important;
+        }
+      }
+      @media only screen and (max-width: 600px) {
+        [class].w265 {
+          width: 265px !important;
+        }
+      }
+      @media only screen and (max-width: 600px) {
+        [class].w100 {
+          width: 100% !important;
+        }
+      }
+      @media only screen and (max-width: 600px) {
+        [class].espacio {
+          width: 350px !important;
+          height: 20px !important;
+        }
+      }
+      @media only screen and (max-width: 600px) {
+        [class].padding {
+          padding-left: 5px !important;
+        }
+      }
+      @media only screen and (max-width: 380px) {
+        [class].w380 {
+          width: 100% !important;
+        }
+      }
+      from {
+        opacity: 1;
+      }
+      to {
+        opacity: 0;
+      }
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+      #text-tool-caret {
+        animation-name: caretBlink;
+        animation-iteration-count: infinite;
+        animation-timing-function: cubic-bezier(1, 0, 0, 1);
+        animation-duration: 1s;
+      }
+      #en-markup-loading-spinner {
+        position: absolute;
+        top: calc(50% - 16px);
+        left: calc(50% - 16px);
+        width: 32px;
+        height: 32px;
+      }
+      #en-markup-loading-spinner img {
+        position: relative;
+        top: 0;
+        left: 0;
+        animation-name: rotateSpinner;
+        animation-duration: 0.6s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+      }
+      .skitchToastBoxContainer {
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        top: 30px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+      }
+      .skitchToastBox {
+        width: 200px;
+        height: 16px;
+        padding: 12px;
+        background-color: rgba(47, 55, 61, 0.95);
+        border-radius: 4px;
+        color: white;
+        cursor: default;
+        font-size: 10pt;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.32);
+        font-family: 'Arial', Helvetica, Arial, sans-serif;
+        border: 2px rgba(255, 255, 255, 0.38) solid;
+      }
+      .skitchToast {
+        padding-left: 20px;
+        padding-right: 20px;
+        display: inline-block;
+        height: 10px;
+        color: #f1f5f8;
+        text-align: center;
+      }
+      #en-markup-disabled {
+        position: fixed;
+        z-index: 9999;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        cursor: default;
+        -webkit-user-select: none;
+      }
+      #en-markup-alert-container {
+        position: absolute;
+        z-index: 9999;
+        width: 450px;
+        left: calc(50% - 225px);
+        top: calc(50% - 85px);
+        background-color: white;
+        box-shadow: 0 2px 7px 1px rgba(0, 0, 0, 0.35);
+        -webkit-user-select: none;
+      }
+      #en-markup-alert-container .cell-1 {
+        position: relative;
+        height: 110px;
+        width: 105px;
+        float: left;
+        text-align: center;
+        background-position: 65% 50%;
+        background-repeat: no-repeat;
+      }
+      #en-markup-alert-container .cell-2 {
+        position: relative;
+        float: left;
+        width: 345px;
+        margin-top: 29px;
+        margin-bottom: 20px;
+      }
+      #en-markup-alert-container .cell-2 .cell-2-title {
+        margin-bottom: 5px;
+        padding-right: 30px;
+        font-size: 12pt;
+        font-family: Tahoma, Arial;
+      }
+      #en-markup-alert-container .cell-2 .cell-2-message {
+        padding-right: 30px;
+        font-size: 9.5pt;
+        font-family: Tahoma, Arial;
+      }
+      #en-markup-alert-container .cell-3 {
+        position: relative;
+        width: 450px;
+        height: 60px;
+        float: left;
+        background-color: rgb(240, 240, 240);
+      }
+      #en-markup-alert-container .cell-3 button {
+        position: absolute;
+        top: 12px;
+        right: 15px;
+        width: 110px;
+        height: 36px;
+      }
+      #en-markup-alert-container .cell-3 button.alt-button {
+        position: absolute;
+        top: 12px;
+        right: 140px;
+        width: 110px;
+        height: 36px;
+      }
+    </style>
+  </head>
+  <body
+    style="margin: 0; padding: 0"
+    topmargin="0"
+    leftmargin="0"
+    marginheight="0"
+    marginwidth="0"
+  >
+    <!-- Este tipo de table se usa para agregar un color de fondo por ejemplo -->
+    <table
+      width="100%"
+      border="0"
+      cellspacing="0"
+      cellpadding="0"
+      bgcolor="#ffffff"
+    >
+      <tbody>
+        <tr>
+          <td align="center" valign="top">
+            <!-- Header -->
+            <table
+              width="600"
+              align="center"
+              border="0"
+              cellpadding="0"
+              cellspacing="0"
+              bgcolor="#ffffff"
+              class="w380"
+              style="height: 40px"
+            >
+              <tbody>
+                <tr>
+                  <td align="center" class="blockwrap textcenter w380">
+                    <a href="https://www.laopinion.com.co/" target="_blank">
+                      <img
+                        class="w100"
+                        src="https://mcusercontent.com/6e19755e139e76341a0bb29f2/images/334c45b6-16f3-43cb-a978-55c3fc5b441b.png"
+                        alt="header"
+                      />
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="center" class="blockwrap textcenter w380">
+                    <a
+                      href="https://suscripciones.laopinion.com.co/"
+                      target="_blank"
+                    >
+                      <img
+                        class="w100"
+                        src="https://mcusercontent.com/6e19755e139e76341a0bb29f2/images/ba0f8705-5921-4fa6-8051-b6e861a5aadd.png"
+                        alt="suscripciones"
+                      />
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <!-- Fin header -->
+
+            <!-- Espacio -->
+            <table
+              width="600"
+              align="center"
+              border="0"
+              cellpadding="0"
+              cellspacing="0"
+              class="w380"
+            >
+              <tbody>
+                <tr>
+                  <td class="w380">
+                    <img
+                      src="https://gallery.mailchimp.com/6e19755e139e76341a0bb29f2/images/5ccfe4e9-6c81-47a4-990c-864ba2084899.gif"
+                      height="25"
+                      alt="5ccfe4e9-6c81-47a4-990c-864ba2084899.gif"
+                    />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <!-- Fin espacio -->
+
+            <table
+              width="600"
+              align="center"
+              border="0"
+              cellpadding="0"
+              cellspacing="0"
+              class="w100"
+            >
+              <tbody>
+                <tr>
+                  <td align="center" class="blockwrap textcenter w380">
+                    <span
+                      style="
+                        color: #d71a20;
+                        font-family: 'PT Sans', sans-serif;
+                        font-size: 16px;
+                        line-height: 18px;
+                        font-weight: bold;
+                      "
+                      >Suscribete a La Opinión y obtén una promoción hecha a tu
+                      medida</span
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <!-- Espacio -->
+                    <table
+                      width="600"
+                      align="center"
+                      border="0"
+                      cellpadding="0"
+                      cellspacing="0"
+                      class="w380"
+                    >
+                      <tbody>
+                        <tr>
+                          <td class="w380">
+                            <img
+                              src="https://gallery.mailchimp.com/6e19755e139e76341a0bb29f2/images/5ccfe4e9-6c81-47a4-990c-864ba2084899.gif"
+                              height="25"
+                              alt="5ccfe4e9-6c81-47a4-990c-864ba2084899.gif"
+                            />
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <!-- Fin espacio -->
+                  </td>
+                </tr>
+                <tr>
+                  <td align="center" class="blockwrap textcenter w380">
+                    <a href="https://suscripciones.laopinion.com.co/">
+                      <img
+                        class="w100"
+                        src="https://mcusercontent.com/6e19755e139e76341a0bb29f2/images/1d54ead3-b2ee-4793-b303-a7770071fde1.png"
+                        alt="promo"
+                      />
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    align="center"
+                    class="blockwrap textcenter w380"
+                    style="background: #d71a20; padding: 20px 0"
+                  >
+                    <span
+                      style="
+                        color: #ffffff;
+                        font-family: 'PT Sans', sans-serif;
+                        font-size: 16px;
+                        line-height: 18px;
+                      "
+                      >Estés donde estés, <strong>La Opinión</strong> te
+                      acompaña <br />
+                      con su versión de papel en formato digital.</span
+                    >
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table
+              width="600"
+              align="center"
+              border="0"
+              cellpadding="0"
+              cellspacing="0"
+              class="w100"
+            >
+              <tbody>
+                <tr>
+                  <table
+                    width="600"
+                    align="center"
+                    border="0"
+                    cellpadding="0"
+                    cellspacing="0"
+                    class="w380"
+                  >
+                    <tbody>
+                      <tr>
+                        <td align="center" class="blockwrap textcenter w380">
+                          <a href="https://suscripciones.laopinion.com.co/">
+                            <img
+                              class="w100"
+                              src="https://mcusercontent.com/6e19755e139e76341a0bb29f2/images/b34f46b4-c100-4e84-9d26-d54bdf7d928f.png"
+                              alt="La Opinión te acompaña"
+                            />
+                          </a>
+                        </td>
+                        <td align="center" class="blockwrap textcenter w380">
+                          <table
+                            width="167"
+                            align="center"
+                            border="0"
+                            cellpadding="0"
+                            cellspacing="0"
+                            class="w380"
+                          >
+                            <tbody>
+                              <tr>
+                                <td>
+                                  <!-- Espacio -->
+                                  <table
+                                    width="167"
+                                    align="center"
+                                    border="0"
+                                    cellpadding="0"
+                                    cellspacing="0"
+                                    class="w380"
+                                  >
+                                    <tbody>
+                                      <tr>
+                                        <td class="w380">
+                                          <img
+                                            src="https://gallery.mailchimp.com/6e19755e139e76341a0bb29f2/images/5ccfe4e9-6c81-47a4-990c-864ba2084899.gif"
+                                            height="20"
+                                            alt="5ccfe4e9-6c81-47a4-990c-864ba2084899.gif"
+                                          />
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                  <!-- Fin espacio -->
+                                </td>
+                              </tr>
+                              <tr>
+                                <td
+                                  align="center"
+                                  class="blockwrap textcenter w380"
+                                >
+                                  <strong
+                                    style="
+                                      color: #333333;
+                                      font-family: 'PT Sans', sans-serif;
+                                      font-size: 12px;
+                                      line-height: 14px;
+                                      font-weight: bold;
+                                    "
+                                    >Comunícate con nosotros</strong
+                                  >
+                                </td>
+                              </tr>
+                              <tr>
+                                <td
+                                  align="center"
+                                  class="blockwrap textcenter w380"
+                                >
+                                  <span
+                                    style="
+                                      color: #d71a20;
+                                      font-family: 'PT Sans', sans-serif;
+                                      font-size: 10px;
+                                      line-height: 12px;
+                                      font-weight: bold;
+                                    "
+                                    >Para mas información y beneficios</span
+                                  >
+                                </td>
+                              </tr>
+                              <tr>
+                                <td
+                                  align="center"
+                                  class="blockwrap textcenter w380"
+                                >
+                                  <img
+                                    src="https://mcusercontent.com/6e19755e139e76341a0bb29f2/images/eefdebb1-8fd4-46ad-b8d8-57229a108118.png"
+                                    alt="Whatsapp"
+                                    width="15"
+                                    height="15"
+                                  />
+                                  <span
+                                    style="
+                                      color: #d71a20;
+                                      font-family: 'PT Sans', sans-serif;
+                                      font-size: 12px;
+                                      line-height: 14px;
+                                      font-weight: bold;
+                                    "
+                                    >3153152005</span
+                                  >
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                        <td align="center" class="blockwrap textcenter w380">
+                          <a href="https://suscripciones.laopinion.com.co/">
+                            <img
+                              class="w100"
+                              src="https://mcusercontent.com/6e19755e139e76341a0bb29f2/images/053f99fd-e16b-4339-8991-8c62fe23c1ab.png"
+                              alt="La Opinión te acompaña"
+                            />
+                          </a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </tr>
+              </tbody>
+            </table>
+
+            <!-- Footer  -->
+            <table
+              width="600"
+              align="center"
+              border="0"
+              cellpadding="0"
+              cellspacing="0"
+              bgcolor="#333333"
+              class="w100"
+            >
+              <tbody>
+                <tr>
+                  <td>
+                    <!-- Espacio -->
+                    <table
+                      width="600"
+                      border="0"
+                      cellpadding="0"
+                      cellspacing="0"
+                      class="w380"
+                      align="center"
+                    >
+                      <tbody>
+                        <tr>
+                          <td class="w380">
+                            <img
+                              src="https://gallery.mailchimp.com/6e19755e139e76341a0bb29f2/images/5ccfe4e9-6c81-47a4-990c-864ba2084899.gif"
+                              height="30"
+                              alt="5ccfe4e9-6c81-47a4-990c-864ba2084899.gif"
+                            />
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <!-- Fin espacio -->
+                  </td>
+                </tr>
+                <tr>
+                  <td valign="top">
+                    <table
+                      class="blockwrap w380 textcenter"
+                      border="0"
+                      cellpadding="0"
+                      cellspacing="0"
+                      bgcolor="#333333"
+                      align="center"
+                      style="padding: 0 5px"
+                    >
+                      <tbody>
+                        <tr>
+                          <td align="center" class="hide">
+                            <img
+                              src="https://gallery.mailchimp.com/6e19755e139e76341a0bb29f2/images/5ccfe4e9-6c81-47a4-990c-864ba2084899.gif"
+                              height="0"
+                              width="40"
+                              alt="5ccfe4e9-6c81-47a4-990c-864ba2084899.gif"
+                            />
+                          </td>
+                          <td align="center" class="blockwrap textcenter w380">
+                            <table
+                              width="160"
+                              align="center"
+                              border="0"
+                              cellpadding="0"
+                              cellspacing="0"
+                              bgcolor="#333333"
+                            >
+                              <tbody>
+                                <tr>
+                                  <td
+                                    align="center"
+                                    class="blockwrap textcenter w380"
+                                  >
+                                    <span
+                                      style="
+                                        color: #ffffff;
+                                        font-family: 'PT Sans', sans-serif;
+                                        font-size: 16px;
+                                      "
+                                      >SÍGANOS</span
+                                    >
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td align="center">
+                                    <table
+                                      width="140"
+                                      align="center"
+                                      border="0"
+                                      cellpadding="0"
+                                      cellspacing="0"
+                                      bgcolor="#333333"
+                                      style="
+                                        display: inline-block;
+                                        text-align: center;
+                                      "
+                                    >
+                                      <tbody>
+                                        <tr>
+                                          <td
+                                            align="center"
+                                            class="textcenter w380"
+                                          >
+                                            <a
+                                              href="https://www.facebook.com/laopinioncucuta/"
+                                              ><img
+                                                src="https://gallery.mailchimp.com/6e19755e139e76341a0bb29f2/images/2591415d-6bac-4496-9d13-30b8c4c12959.png"
+                                                alt="facebook"
+                                            /></a>
+                                          </td>
+                                          <td
+                                            align="center"
+                                            class="textcenter w380"
+                                          >
+                                            <img
+                                              src="https://gallery.mailchimp.com/6e19755e139e76341a0bb29f2/images/5ccfe4e9-6c81-47a4-990c-864ba2084899.gif"
+                                              height="0"
+                                              width="5"
+                                              alt="5ccfe4e9-6c81-47a4-990c-864ba2084899.gif"
+                                            />
+                                          </td>
+                                          <td
+                                            align="center"
+                                            class="textcenter w380"
+                                          >
+                                            <a
+                                              href="https://www.instagram.com/opinioncucuta/"
+                                              ><img
+                                                src="https://gallery.mailchimp.com/6e19755e139e76341a0bb29f2/images/1b0c99af-b38d-48ba-b6be-8c2cfc8b1555.png"
+                                                alt="instagram"
+                                            /></a>
+                                          </td>
+                                          <td
+                                            align="center"
+                                            class="textcenter w380"
+                                          >
+                                            <img
+                                              src="https://gallery.mailchimp.com/6e19755e139e76341a0bb29f2/images/5ccfe4e9-6c81-47a4-990c-864ba2084899.gif"
+                                              height="0"
+                                              width="5"
+                                              alt="5ccfe4e9-6c81-47a4-990c-864ba2084899.gif"
+                                            />
+                                          </td>
+                                          <td
+                                            align="center"
+                                            class="textcenter w380"
+                                          >
+                                            <a
+                                              href="https://www.twitter.com/laopinioncucuta/"
+                                              ><img
+                                                src="https://gallery.mailchimp.com/6e19755e139e76341a0bb29f2/images/e46f3c54-6fae-4c5b-a716-300baf9af6e4.png"
+                                                alt="twitter"
+                                            /></a>
+                                          </td>
+                                          <td
+                                            align="center"
+                                            class="textcenter w380"
+                                          >
+                                            <img
+                                              src="https://gallery.mailchimp.com/6e19755e139e76341a0bb29f2/images/5ccfe4e9-6c81-47a4-990c-864ba2084899.gif"
+                                              height="0"
+                                              width="5"
+                                              alt="5ccfe4e9-6c81-47a4-990c-864ba2084899.gif"
+                                            />
+                                          </td>
+                                          <td
+                                            align="center"
+                                            class="textcenter w380"
+                                          >
+                                            <a
+                                              href="https://www.youtube.com/user/WEBLAOPINION"
+                                              ><img
+                                                src="https://gallery.mailchimp.com/6e19755e139e76341a0bb29f2/images/6b090fe4-1c93-4062-97c8-b9cf443df68e.png"
+                                                alt="youtube"
+                                            /></a>
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td
+                                    align="center"
+                                    class="blockwrap textcenter w380"
+                                  >
+                                    <!-- Espacio -->
+                                    <table
+                                      border="0"
+                                      cellpadding="0"
+                                      cellspacing="0"
+                                      class="w380"
+                                      align="center"
+                                    >
+                                      <tbody>
+                                        <tr>
+                                          <td class="w380">
+                                            <img
+                                              src="https://gallery.mailchimp.com/6e19755e139e76341a0bb29f2/images/5ccfe4e9-6c81-47a4-990c-864ba2084899.gif"
+                                              height="10"
+                                              alt="5ccfe4e9-6c81-47a4-990c-864ba2084899.gif"
+                                            />
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                    <!-- Fin espacio -->
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td
+                                    align="center"
+                                    class="blockwrap textcenter w380"
+                                  >
+                                    <span
+                                      style="
+                                        color: #ffffff;
+                                        font-family: 'PT Sans', sans-serif;
+                                        font-size: 16px;
+                                        text-decoration: none;
+                                      "
+                                      >www.laopinion.com.co</span
+                                    >
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                          <td class="blockwrap w380">
+                            <img
+                              src="https://gallery.mailchimp.com/6e19755e139e76341a0bb29f2/images/5ccfe4e9-6c81-47a4-990c-864ba2084899.gif"
+                              height="0"
+                              width="80"
+                              alt="5ccfe4e9-6c81-47a4-990c-864ba2084899.gif"
+                            />
+                          </td>
+                          <td
+                            align="left"
+                            valign="top"
+                            class="blockwrap w380 padding"
+                          >
+                            <p
+                              style="
+                                color: #ffffff;
+                                font-family: 'PT Sans', sans-serif;
+                                font-size: 16px;
+                                line-height: 18px;
+                              "
+                            >
+                              Copyright © 2001 - *|CURRENT_YEAR|* La Opinión
+                              S.A. - Todos los derechos reservados
+                            </p>
+                            <p
+                              style="
+                                color: #ffffff;
+                                font-family: 'PT Sans', sans-serif;
+                                font-size: 14px;
+                                line-height: 16px;
+                              "
+                            >
+                              <a
+                                style="
+                                  color: #ffffff;
+                                  font-family: 'PT Sans', sans-serif;
+                                  font-size: 14px;
+                                  line-height: 16px;
+                                "
+                                href="*|UNSUB|*"
+                                >Darse de baja del boletín.</a
+                              >
+                            </p>
+                          </td>
+                          <td class="hide">
+                            <img
+                              src="https://gallery.mailchimp.com/6e19755e139e76341a0bb29f2/images/5ccfe4e9-6c81-47a4-990c-864ba2084899.gif"
+                              width="10"
+                              alt="5ccfe4e9-6c81-47a4-990c-864ba2084899.gif"
+                            />
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <!-- Espacio -->
+                    <table
+                      width="600"
+                      border="0"
+                      cellpadding="0"
+                      cellspacing="0"
+                      class="w380"
+                      align="center"
+                    >
+                      <tbody>
+                        <tr>
+                          <td class="w380">
+                            <img
+                              src="https://gallery.mailchimp.com/6e19755e139e76341a0bb29f2/images/5ccfe4e9-6c81-47a4-990c-864ba2084899.gif"
+                              height="30"
+                              alt="5ccfe4e9-6c81-47a4-990c-864ba2084899.gif"
+                            />
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <!-- Fin espacio -->
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
