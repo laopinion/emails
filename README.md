@@ -9,5 +9,5 @@
 - Template diarias [abrir](https://laopinion.github.io/emails/diarias.html).
 
 - Template Covid-19 [abrir](https://laopinion.github.io/emails/covid-19.html).
-- 
+  
 - Template Suscripciones [abrir](https://laopinion.github.io/emails/suscripciones.html).
